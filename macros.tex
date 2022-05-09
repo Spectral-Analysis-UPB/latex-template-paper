@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% two types of boxes to use for highlighting things
+\NewEnviron{solidbox}{
+    \begin{center}
+    \par
+    \begin{tikzpicture}
+    \node[rectangle,minimum width=0.85\textwidth] (m) {
+        \begin{minipage}{0.8\textwidth}\BODY\end{minipage}
+    };
+    \draw (m.south west) rectangle (m.north east);
+    \end{tikzpicture}
+    \end{center}
+}
+
+\NewEnviron{dashedbox}{
+    \begin{center}
+    \par
+    \begin{tikzpicture}
+    \node[rectangle,minimum width=0.85\textwidth] (m) {
+        \begin{minipage}{0.8\textwidth}\BODY\end{minipage}
+    };
+    \draw[dashed] (m.south west) rectangle (m.north east);
+    \end{tikzpicture}
+    \end{center}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% some commonly used math commands
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 , #2}
+
+\newcommand{\nnorm}[1]{
+    {\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}
+}
+\newcommand{\set}[2]{\mleft\{ #1 \,\middle|\, #2 \mright\}}
+
+\newcommand{\restr}[2][{}]{\,{\big|}^{#1}_{#2}}
+\newcommand{\defgl}{\mathrel{=\!\!\mathop:}}
+\newcommand{\defgr}{\mathrel{\mathop:\!\!=}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\HH}{\mathbb{H}}
+
+\newcommand{\id}[1]{\mathrm{id}_{#1}}
+\newcommand{\Id}[1]{\mathrm{Id}_{#1}}
+\newcommand{\function}[3]{#1: #2 \rightarrow #3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% some optional packages
+%\usepackage{graphicx}
+%\usepackage{subcaption}
+%\usepackage{showlabels}
+%\usepackage{color}
+%\definecolor{bg}{rgb}{0.95,0.95,0.95}
